@@ -13,10 +13,10 @@ const port = 3000;
 app.get("/", (req, res) => {
     res.send("welcome to todos app!");
 });
-app.get("/todos/:title", (req, res) => {
+app.get("/todos", (req, res) => {
     const data = fs_1.default.readFileSync(filePath, { encoding: "utf-8" });
     console.log("from qures", req.query);
-    console.log("from paramge", req.params);
+    console.log("from params", req.params);
     res.json(data);
 });
 app.post("/todos/create-todo", (req, res) => {
